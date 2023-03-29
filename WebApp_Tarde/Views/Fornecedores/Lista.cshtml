@@ -1,5 +1,34 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div class="card text-white bg-dark">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h2>Lista de Fornecedores</h2>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <div class="card-body bg-dark">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Fornecedores/Cadastro"
+                   class="btn btn-success">
+                    Novo Fornecedor
+                </a>
+            </div>
+            <div class="col-3">
+                <select name="filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="id">Por Id</option>
+                    <option value="nome">Por Nome</option>
+                    <option value="telefone">Por Telefone</option>
+                </select>
+            </div>
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+    </div>
+</div>

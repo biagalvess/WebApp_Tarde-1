@@ -1,5 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div class="card text-white bg-dark">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-4">
+                <h2>Novo Fornecedor</h2>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    <div class="card-body bg-dark">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <form action="/Fornecedor/Cadastro" method="post">
+                    <lable>Nome</lable>
+                    <input type="text" name="Nome" class="form-control" />
+                    <br />
+
+                    <lable>Telefone</lable>
+                    <input type="tel" name="Telefone" class="form-control" />
+                    <br />
+
+                    <button type="submit" class="btn btn-success">Salvar Fornecedor</button>
+                </form>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </div>
+</div>

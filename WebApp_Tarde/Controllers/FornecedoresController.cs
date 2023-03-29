@@ -4,7 +4,11 @@ namespace WebApp_Tarde.Controllers
 {
     public class FornecedoresController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Lista()
+        {
+            return View();
+        }
+        public IActionResult Cadastro()
         {
             return View();
         }
