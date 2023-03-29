@@ -1,27 +1,39 @@
-﻿<h1>Cadastro do usuario</h1>
-
-<form action="" method="post">
-    <div class="form-group">
-        <lable>Nome</lable>
-        <input name="Nome" type="text" class="form-control" />
+﻿<div class="card text-white bg-dark">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-4">
+                <h2>Cadastro de Usuarios</h2>
+            </div>
+            <div class="col-3"></div>
+        </div>
     </div>
+    <div class="card-body">
+        <form action="" method="post">
+            <div class="form-group">
+                <lable>Nome</lable>
+                <input name="Nome" type="text" class="form-control" />
+            </div>
 
-    <div class="form-group">
-        <label>Senha</label>
-        <input name="Senha" type="password" class="form-control" />
+            <div class="form-group">
+                <label>Senha</label>
+                <input name="Senha" type="password" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <lable>Login</lable>
+                <input name="Login" type="text" class="form-control" />
+            </div>
+
+            <div class="form-check">
+                <lable>Usúario Ativado?</lable>
+                <input type="checkbox" name="ativo" checked="checked" />
+            </div>
+
+            <button class="btn btn-success" type="submit">
+                Salvar Dados
+            </button>
+        </form>
     </div>
+</div>
 
-    <div class="form-group">
-        <lable>Login</lable>
-        <input name="Login" type="text" class="form-control" />
-    </div>
-
-    <div class="form-check">
-        <lable>Usúario Ativado?</lable>
-        <input type="checkbox" name="ativo" checked="checked" />
-    </div>
-
-    <button class="btn btn-success" type="submit">
-        Salvar Dados
-    </button>
-</form>
