@@ -1,4 +1,6 @@
-﻿<div class="card text-white bg-dark mb-3">
+﻿@model List<WebApp_Tarde.Models.ClientesViewModel>
+
+<div class="card text-white bg-dark mb-3">
     <div class="card-header">
         <h2>Lista de Clientes</h2>
     </div>
@@ -37,82 +39,28 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Maria</td>
-                    <td>16 997706690</td>
-                    <td>
-                        <a href="/Clientes/Editar/1"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/Excluir/1"
-                           class="btn btn-danger">
-                            Excluir
-                        </a>
-                        <a href="/Clientes/Compras/1"
-                           class="btn btn-info">
-                            Lista de Compras
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Leticia</td>
-                    <td>16 999999999</td>
-                    <td>
-                        <a href="/Clientes/Editar/2"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/Excluir/2"
-                           class="btn btn-danger">
-                            Excluir
-                        </a>
-                        <a href="/Clientes/Compras/2"
-                           class="btn btn-info">
-                            Lista de Compras
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Beatriz</td>
-                    <td>16 999797979</td>
-                    <td>
-                        <a href="/Clientes/Editar/3"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/Excluir/3"
-                           class="btn btn-danger">
-                            Excluir
-                        </a>
-                        <a href="/Clientes/Compras/3"
-                           class="btn btn-info">
-                            Lista de Compras
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Victoria</td>
-                    <td>16 999999998</td>
-                    <td>
-                        <a href="/Clientes/Editar/4"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/Excluir/4"
-                           class="btn btn-danger">
-                            Excluir
-                        </a>
-                        <a href="/Clientes/Compras/4"
-                           class="btn btn-info">
-                            Lista de Compras
-                        </a>
-                    </td>
-                </tr>
+                @foreach (var cliente in Model)
+                {
+                    <tr>
+                        <td>@cliente.Id</td>
+                        <td>@cliente.Nome</td>
+                        <td>@cliente.Telefone</td>
+                        <td>
+                            <a href="/Clientes/Editar/@cliente.Id"
+                               class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/Clientes/Excluir/@cliente.Id"
+                               class="btn btn-danger">
+                                Excluir
+                            </a>
+                            <a href="/Clientes/Compras/@cliente.Id"
+                               class="btn btn-info">
+                                Lista de Compras
+                            </a>
+                        </td>
+                    </tr>
+                }
             </tbody>
 
         </table>
