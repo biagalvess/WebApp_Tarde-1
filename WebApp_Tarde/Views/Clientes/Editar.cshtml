@@ -1,9 +1,11 @@
-﻿<div class="card text-white bg-dark">
+﻿@model WebApp_Tarde.Models.ClientesViewModel
+
+<div class="card text-white bg-dark">
     <div class="card-header">
         <div class="row">
             <div class="col-5"></div>
             <div class="col-4">
-                <h2>Novo Cliente</h2>
+                <h2>Editar Cliente</h2>
             </div>
             <div class="col-3"></div>
         </div>
@@ -14,12 +16,15 @@
             </div>
             <div class="col-4">
                 <form action="/Clientes/SalvarDados" method="post">
+                    <lable>Código</lable>
+                    <input name="Id" type="text" readonly value="@Model.Id"
+
                     <lable>Nome</lable>
-                    <input type="text" name="Nome" class="form-control" />
+                    <input type="text" name="Nome" class="form-control" value="@Model.Nome" />
                     <br />
 
                     <lable>Telefone</lable>
-                    <input type="tel" name="Telefone" class="form-control" />
+                    <input type="tel" name="Telefone" class="form-control " value="@Model.Telefone" />
                     <br />
 
                     <button type="submit" class="btn btn-success">Salvar Cliente</button>
