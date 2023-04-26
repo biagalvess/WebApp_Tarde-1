@@ -1,4 +1,5 @@
-﻿<div class="card text-white bg-dark">
+﻿@model List<WebApp_Tarde.Entidades.ProdutoEntidade>
+<div class="card text-white bg-dark">
     <div class="card-header">
         <div class="row">
             <div class="col-4"></div>
@@ -32,5 +33,41 @@
                 <button class="btn btn-primary" type="submit">Pesquisar</button>
             </div>
         </div>
+        <table class="table table-dark">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descricao</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var produto in Model)
+                {
+                    <tr>
+                        <td>@produto.Id</td>
+                        <td>@produto.Descricao</td>
+                        <td>@produto.Valor</td>
+                        <td>
+                            <a href="/Clientes/Editar/@produto.Id"
+                               class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/Clientes/Excluir/@produto.Id"
+                               class="btn btn-danger">
+                                Excluir
+                            </a>
+                            <a href="/Clientes/Compras/@produto.Id"
+                               class="btn btn-info">
+                                Lista de Compras
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
     </div>
     </div>
