@@ -5,36 +5,37 @@ namespace WebApp_Tarde.Controllers
 {
     public class CategoriasController : Controller
     {
-        public Contexto db { get; set; }
+        public Contexto contexto;
 
-        public CategoriasController(Contexto opt)
+        public CategoriasController(Contexto db)
         {
-            db = opt;
+            contexto = db;
         }
         public IActionResult Lista()
         {
-            return View(db.Categoria.ToList());
+            return View(contexto.Categorias.ToList());
         }
         public IActionResult Cadastro()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult SalvarDados(CategoriaEntidade dados)
+        public IActionResult SalvarDados(CategoriasEntidade dados)
         {
-            if (dados.Id == 0)
+            if (dados.Id != null)
             {
-                db.Add(dados);
-                db.SaveChanges();
+                contexto.Categorias.Update(dados);
+                contexto.SaveChanges();
             }
             else
             {
-                db.Update(dados);
+                contexto.Categorias.Add(dados);
+                contexto.SaveChanges();
 
             }
             return RedirectToAction("Lista");
         }
-        public IActionResult Editar(int id, CategoriaEntidade Categoria)
+        public IActionResult Editar(int id, CategoriasEntidade Categoria)
         {
             if (Categoria != null)
             {
@@ -45,11 +46,12 @@ namespace WebApp_Tarde.Controllers
                 return RedirectToAction("Lista");
             }
         }
-        public IActionResult Excluir(CategoriaEntidade categoria)
+        public IActionResult Excluir(CategoriasEntidade id, CategoriasEntidade dados)
         {
-            if (categoria != null)
+            if (id != null)
             {
-                db.Remove(categoria);
+                contexto.Categorias.Remove(dados);
+                contexto.SaveChanges(); 
             }
             return RedirectToAction("Lista");
         }

@@ -8,13 +8,6 @@ namespace WebApp_Tarde
         public Contexto(DbContextOptions<Contexto> opt): base(opt)
         { }
         public DbSet<ProdutoEntidade> Produto { get; set; }
-    }
-    public class Categorias : DbContext 
-    {
-        public Categorias(DbContextOptions<Categorias> opt): base(opt)
-        {
-
-        }  
-        public DbSet<CategoriaEntidade> Categoria { get; set; }
+        public DbSet<CategoriasEntidade> Categorias { get; set; }
     }
 }

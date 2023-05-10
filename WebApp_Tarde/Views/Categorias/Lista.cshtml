@@ -1,4 +1,4 @@
-﻿@model List<WebApp_Tarde.Entidades.CategoriaEntidade>
+﻿@model List<WebApp_Tarde.Entidades.CategoriasEntidade>
 <div class="card text-white bg-dark">
     <div class="card-header">
         <div class="row">
@@ -12,7 +12,7 @@
     <div class="card-body bg-dark">
         <div class="row">
             <div class="col-2">
-                <a href="/Produtos/Cadastro"
+                <a href="/Categorias/Cadastro"
                    class="btn btn-success">
                     Nova Categoria
                 </a>
@@ -48,11 +48,11 @@
                         <td>@categoria.Id</td>
                         <td>@categoria.Nome</td>
                         <td>
-                            <a href="/Produtos/Editar/@categoria.Id"
+                            <a href="/Categorias/Editar/@categoria.Id"
                                class="btn btn-warning">
                                 Editar
                             </a>
-                            <a href="/Produtos/Excluir/@categoria.Id"
+                            <a href="/Categorias/Excluir/@categoria.Id"
                                class="btn btn-danger">
                                 Excluir
                             </a>
