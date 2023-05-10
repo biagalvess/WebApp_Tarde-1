@@ -1,0 +1,67 @@
+﻿@model List<WebApp_Tarde.Entidades.CategoriaEntidade>
+<div class="card text-white bg-dark">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h2>Lista de Categorias</h2>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <div class="card-body bg-dark">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Produtos/Cadastro"
+                   class="btn btn-success">
+                    Nova Categoria
+                </a>
+            </div>
+            <div class="col-3">
+                <select name="filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="id">Por Id</option>
+                    <option value="nome">Por Nome</option>
+                </select>
+            </div>
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+        </div>
+        <table class="table table-dark">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var categoria in Model)
+                {
+                    <tr>
+                        <td>@categoria.Id</td>
+                        <td>@categoria.Nome</td>
+                        <td>
+                            <a href="/Produtos/Editar/@categoria.Id"
+                               class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/Produtos/Excluir/@categoria.Id"
+                               class="btn btn-danger">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
