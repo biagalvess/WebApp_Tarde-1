@@ -7,7 +7,7 @@ namespace WebApp_Tarde
     {
         public Contexto(DbContextOptions<Contexto> opt): base(opt)
         { }
-        public DbSet<ProdutoEntidade> Produto { get; set; }
+        public DbSet<ProdutoEntidade> Produtos { get; set; }
         public DbSet<CategoriasEntidade> Categorias { get; set; }
     }
 }

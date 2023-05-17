@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApp_Tarde.Entidades;
 using WebApp_Tarde.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApp_Tarde.Controllers
 {
@@ -14,7 +15,7 @@ namespace WebApp_Tarde.Controllers
         }
         public IActionResult Lista()
         {
-            return View(db.Produto.ToList());
+            return View(db.Produtos.Include(a=> a.Categoria).ToList());
         }
         public IActionResult Cadastro()
         {
@@ -25,7 +26,7 @@ namespace WebApp_Tarde.Controllers
         {
             if (dados.Id == 0)
             {
-                db.Add(dados);
+                db.Produtos.Add(dados);
                 db.SaveChanges();
             }
             else
