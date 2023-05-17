@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApp_Tarde.Entidades;
+using WebApp_Tarde.Models;
 
 namespace WebApp_Tarde.Controllers
 {
@@ -17,13 +19,16 @@ namespace WebApp_Tarde.Controllers
 
         public IActionResult Cadastro()
         {
-            return View();
+            NovaVendaViewModel model = new NovaVendaViewModel();
+            model.Lista_Produto = db.Produtos.ToList();
+
+            return View(model);
 
         }
         [HttpPost]
-        public IActionResult SalvarDados()
+        public IActionResult SalvarDados(ItensVendasEntidade dados)
         {
-            return View();
+            return RedirectToAction("Lista");
 
 
         }
