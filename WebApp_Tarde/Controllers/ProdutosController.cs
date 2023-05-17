@@ -19,22 +19,18 @@ namespace WebApp_Tarde.Controllers
         }
         public IActionResult Cadastro()
         {
-            return View();
+            NovoProdutoViewModel model = new NovoProdutoViewModel();
+            model.Lista_Categorias = db.Categorias.ToList();
+            return View(model);
         }
         [HttpPost]
         public IActionResult SalvarDados(ProdutoEntidade dados)
         {
-            if (dados.Id == 0)
-            {
+   
                 db.Produtos.Add(dados);
                 db.SaveChanges();
-            }
-            else
-            {
-                db.Update(dados);
 
-            }
-            return RedirectToAction("Lista");
+                return RedirectToAction("Lista");
         }
         public IActionResult Editar(int Id, ProdutoEntidade produto)
         {

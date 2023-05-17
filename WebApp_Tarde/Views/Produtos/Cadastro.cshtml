@@ -1,4 +1,9 @@
-﻿<div class="card text-white bg-dark">
+﻿@model WebApp_Tarde.Models.NovoProdutoViewModel
+
+
+
+
+<div class="card text-white bg-dark">
     <div class="card-header">
         <div class="row">
             <div class="col-5"></div>
@@ -13,9 +18,10 @@
             <div class="col-4">
             </div>
             <div class="col-4">
+                <
                 <form action="/Produtos/SalvarDados" method="post">
                     <lable>Descrição</lable>
-                    <input type="text" name="Descricao" class="form-control" />
+                    <input name="Descricao" type="text" class="form-control" />
                     <br />
 
                     <lable>Valor</lable>
@@ -26,6 +32,13 @@
                     <input type="number" name="Ativo" class="form-control" />
                     <br />
 
+                    <label> Categoria</label>
+                    <select name="CategoriaId">
+                        @foreach (var categoria in Model.Lista_Categorias)
+                        {
+                            <option value ="@categoria.Id">@categoria.Nome</option>
+                        }
+                    </select>
                     <button type="submit" class="btn btn-success">Salvar Produtos</button>
                 </form>
             </div>

@@ -40,6 +40,7 @@
                     <th>Código</th>
                     <th>Descricao</th>
                     <th>Valor</th>
+                    <th>Categoria</th>
                     <th></th>
                 </tr>
             </thead>
@@ -51,6 +52,7 @@
                         <td>@produto.Id</td>
                         <td>@produto.Descricao</td>
                         <td>@produto.Valor</td>
+                        <td>@produto.Categoria.Nome</td>
                         <td>
                             <a href="/Produtos/Editar/@produto.Id"
                                class="btn btn-warning">
